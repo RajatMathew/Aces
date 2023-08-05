@@ -9,24 +9,20 @@ export default function TeamSlider() {
   const teamData = [
     {
       memberImage: '/images/member_1.jpeg',
-      memberName: 'Melon Bulgery',
-      memberDesignation: 'Product Designer',
+      memberName: 'Chakola David Paul',
+      memberDesignation: '',
       memberSocial: {
-        linkedin: '/',
-        twitter: '/',
-        youtube: '/',
-        facebook: '/',
+        linkedin: 'https://www.linkedin.com/in/chakoladavidpaul',
+        twitter: 'https://twitter.com/read_cdp',
       },
     },
     {
       memberImage: '/images/member_2.jpeg',
-      memberName: 'Olinaz Fushi',
-      memberDesignation: 'Product Designer',
+      memberName: 'Alfin John',
+      memberDesignation: '',
       memberSocial: {
-        linkedin: '/',
-        twitter: '/',
-        youtube: '/',
-        facebook: '/',
+        linkedin: 'https://www.linkedin.com/in/alfinjohn',
+        twitter: 'https://twitter.com/AlfinJohn555',
       },
     },
     {
@@ -44,17 +40,6 @@ export default function TeamSlider() {
       memberImage: '/images/member_4.jpeg',
       memberName: 'Melina Opole',
       memberDesignation: 'WP Developer',
-      memberSocial: {
-        linkedin: '/',
-        twitter: '/',
-        youtube: '/',
-        facebook: '/',
-      },
-    },
-    {
-      memberImage: '/images/member_1.jpeg',
-      memberName: 'Melon Bulgery',
-      memberDesignation: 'Product Designer',
       memberSocial: {
         linkedin: '/',
         twitter: '/',

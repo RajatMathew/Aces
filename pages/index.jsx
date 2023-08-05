@@ -54,7 +54,7 @@ export default function Home() {
           vital for art to thrive, unity in harmony to
           build a community for artists and art to thrive!"
           btnText="Get Started"
-          btnLink="/contact"
+          btnLink="/passion"
           scrollDownId="#service"
           socialLinksHeading="Follow Us"
           heroSocialLinks={heroSocialLinks}
@@ -147,7 +147,6 @@ export default function Home() {
           <Spacing lg="85" md="45" />
           <TeamSlider />
         </Div>
-        <Spacing lg="150" md="80" />
         {/* End Team Section */}
 
 
