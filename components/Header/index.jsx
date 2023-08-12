@@ -1,11 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import SocialWidget from '../Widget/SocialWidget';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import Div from '../Div';
-import DropDown from './DropDown';
+import { UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { Button, Divider, Popover, Segmented } from 'antd';
+import { Skeleton } from 'antd';
+
+const content = (
+  <div
+    style={{ backgroundColor: '#07031b', color: 'white', width: '200px' }}
+  >
+    <Skeleton avatar paragraph={{ rows: 1 }} />
+    <hr></hr>
+    <div>
+      Your art
+    </div>
+    <hr></hr>
+    <div>
+      Privacy policy
+    </div>
+    <hr></hr>
+    <div>
+      Contact us
+    </div>
+    <hr></hr>
+    <div>
+      About us
+    </div><hr></hr>
+    <div>
+      Follow us on
+
+      <SocialWidget />
+    </div>
+  </div>
+);
+
+const buttonWidth = 70;
+
 
 export default function Header({ variant }) {
+  const [showArrow, setShowArrow] = useState(true);
+  const [arrowAtCenter, setArrowAtCenter] = useState(false);
+
+  const mergedArrow = useMemo(() => {
+    if (arrowAtCenter) return { pointAtCenter: true };
+    return showArrow;
+  }, [showArrow, arrowAtCenter]);
+
+
   const [isSticky, setIsSticky] = useState(false);
   const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
@@ -78,6 +121,12 @@ export default function Header({ variant }) {
                   </span>
                 </Div>
               </Div>
+              <Div className="cs-main_header_right">
+                <Popover placement="bottomRight" color='#07031b' content={content} arrow={mergedArrow}>
+                  <Button type="primary"><UserOutlined /></Button>
+                </Popover>
+
+              </Div>
             </Div>
           </Div>
         </Div>
@@ -103,7 +152,7 @@ export default function Header({ variant }) {
           </Link>
           <Div className="cs-side_header_box">
             <h2 className="cs-side_header_heading">
-              Do you have a project in your <br /> mind? Keep connect us.
+              Do you have a idea in your <br /> mind? Keep connect us.
             </h2>
           </Div>
           <Div className="cs-side_header_box">
