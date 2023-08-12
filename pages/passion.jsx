@@ -70,7 +70,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Studio/Jamroom"
-                      link="/"
+                      link="/studio"
                       src="/images/service_5.jpeg"
                       alt="Service"
                     />
@@ -79,7 +79,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Light&Sound"
-                      link="/"
+                      link="/Light&Sound"
                       src="/images/service_6.jpeg"
                       alt="Service"
                     />
@@ -88,7 +88,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Individual Artist"
-                      link=""
+                      link="/IndividualArtist"
                       src="/images/service_6.jpeg"
                       alt="Service"
                     />
@@ -97,7 +97,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Events"
-                      link=""
+                      link="/Events"
                       src="/images/service_6.jpeg"
                       alt="Service"
                     />
