@@ -89,7 +89,7 @@ export default function Service() {
                     <Card
                       title="Individual Artist"
                       link="/IndividualArtist"
-                      src="/images/service_6.jpeg"
+                      src="/images/service_7.jpeg"
                       alt="Service"
                     />
                     <Spacing lg="0" md="30" />
@@ -98,7 +98,7 @@ export default function Service() {
                     <Card
                       title="Events"
                       link="/Events"
-                      src="/images/service_6.jpeg"
+                      src="/images/service_8.jpeg"
                       alt="Service"
                     />
                     <Spacing lg="0" md="30" />
