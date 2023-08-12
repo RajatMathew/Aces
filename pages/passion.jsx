@@ -30,7 +30,6 @@ export default function Service() {
               </Div>
               <Div className="col-xl-8">
                 <Div className="row">
-                  <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Bands"
@@ -40,7 +39,6 @@ export default function Service() {
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
-                  <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Dancers"
@@ -59,7 +57,6 @@ export default function Service() {
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
-                  <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="DJs"
@@ -69,8 +66,7 @@ export default function Service() {
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
-                  <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                  <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
+                  
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Studio/Jamroom"
@@ -80,7 +76,6 @@ export default function Service() {
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
-                  <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Light&Sound"
@@ -98,7 +93,7 @@ export default function Service() {
                       alt="Service"
                     />
                     <Spacing lg="0" md="30" />
-                  </Div><Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
+                  </Div>
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Events"

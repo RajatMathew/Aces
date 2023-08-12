@@ -18,10 +18,6 @@ export default function ContactInfoWidget({withIcon, title}) {
           {withIcon?<span className='cs-accent_color'><Icon icon="mdi:map-marker" /></span>:''}
           CIN: U90009KL2023PTC081140
         </li>
-        <li>
-          {withIcon?<span className='cs-accent_color'><Icon icon="mdi:map-marker" /></span>:''}
-          39/2475-B1 SUITE 560, LR TOWERS, SJRRA 104 SOUTH JANATHA ROAD PALARIVATTOM Ernakulam, Kerala.
-        </li>
       </ul>
     </>
   )
