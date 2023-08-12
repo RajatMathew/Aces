@@ -17,7 +17,7 @@ export default function Home() {
                 <Pricing
                     title='Join Our community'
                     regText='Register'
-                    regLink='/dj/register'
+                    regLink='/photographer/register'
                     refText='Refer'
                     refLink='/'
                     features={['Static responsive website', 'Video marketing', 'Keywords research', 'Facebook campaign', 'eCommerce solution', 'Google adword']}
