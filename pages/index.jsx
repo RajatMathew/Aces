@@ -62,17 +62,6 @@ export default function Home() {
         />
         {/* End Hero Section */}
 
-        {/* Start FunFact Section */}
-        <div className="container">
-          <FunFact
-            variant="cs-type1"
-            title="Our Results"
-            subtitle="Be a part of our community ."
-            data={funfaceData}
-          />
-        </div>
-        {/* End FunFact Section */}
-
         {/* Start Service Section */}
         <Spacing lg="150" md="80" />
         <Div id="service">
@@ -83,7 +72,7 @@ export default function Home() {
                   title="Things we can help you with"
                   subtitle="What Can We Do"
                   btnText="See All "
-                  btnLink="/service"
+                  btnLink="/passion"
                 />
                 <Spacing lg="90" md="45" />
               </Div>
@@ -93,7 +82,7 @@ export default function Home() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Bands"
-                      link="/service/service-details"
+                      link="/band"
                       src="/images/service_1.jpeg"
                       alt="Service"
                     />
@@ -103,7 +92,7 @@ export default function Home() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Dancers"
-                      link="/service/service-details"
+                      link="/dance"
                       src="/images/service_2.jpeg"
                       alt="Service"
                     />
@@ -112,7 +101,7 @@ export default function Home() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Photographers"
-                      link="/service/service-details"
+                      link="/photographer"
                       src="/images/service_3.jpeg"
                       alt="Service"
                     />
@@ -122,7 +111,7 @@ export default function Home() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="DJs"
-                      link="/service/service-details"
+                      link="/dj"
                       src="/images/service_4.jpeg"
                       alt="Service"
                     />

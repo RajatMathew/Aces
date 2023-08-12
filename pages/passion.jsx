@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import React from 'react';
-import Card from '../../components/Card';
-import Div from '../../components/Div';
-import Layout from '../../components/Layout';
-import SectionHeading from '../../components/SectionHeading';
-import Spacing from '../../components/Spacing';
+import Card from '../components/Card';
+import Div from '../components/Div';
+import Layout from '../components/Layout';
+import SectionHeading from '../components/SectionHeading';
+import Spacing from '../components/Spacing';
 
 export default function Service() {
   return (
@@ -34,7 +34,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Bands"
-                      link="/passion/band"
+                      link="/band"
                       src="/images/service_1.jpeg"
                       alt="Service"
                     />
@@ -44,7 +44,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Dancers"
-                      link="/"
+                      link="/passion/dance"
                       src="/images/service_2.jpeg"
                       alt="Service"
                     />

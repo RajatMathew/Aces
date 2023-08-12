@@ -75,17 +75,6 @@ export default function About() {
         <Spacing lg="75" md="55" />
         {/* End About Section */}
 
-        {/* Start Fun Fact Section */}
-        <Div className="container">
-          <FunFact
-            title="Our fun fact"
-            subtitle="Be a part of  our community."
-            data={funfaceData}
-          />
-        </Div>
-        {/* End Fun Fact Section */}
-
-
         {/* Start Team Section */}
         <Spacing lg="145" md="80" />
         <Div className="container">
