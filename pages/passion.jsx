@@ -42,7 +42,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Dancers"
-                      link="/passion/dance"
+                      link="/dance"
                       src="/images/service_2.jpeg"
                       alt="Service"
                     />
@@ -51,7 +51,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="Photo&Videography"
-                      link="/"
+                      link="/photographer"
                       src="/images/service_3.jpeg"
                       alt="Service"
                     />
@@ -60,7 +60,7 @@ export default function Service() {
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title="DJs"
-                      link="/"
+                      link="/dj"
                       src="/images/service_4.jpeg"
                       alt="Service"
                     />
