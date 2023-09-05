@@ -82,6 +82,71 @@ const BandRegistration = ({ data }) => {
         const imgWindow = window.open(src);
         imgWindow?.document.write(image.outerHTML);
     };
+
+
+
+    const [formData, setFormData] = useState({
+        
+            creatorId: "",
+            name: "",
+            logoUrl: "",
+            coverPictureUrl: "",
+            location: "",
+            mailId: "",
+            primaryPhoneNumber: "",
+            secondaryPhoneNumber: "",
+            instagramLink: "",
+            facebookLink: "",
+            youtubeLink: "",
+            bio: "",
+            genre: ""
+        
+      });
+
+
+
+    const handleInputFieldChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value
+        });
+      };
+
+
+
+
+
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+            console.log(formData)
+          const res = await fetch('http://localhost:8000/bands/create', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+    
+          if (!res.ok) {
+            throw new Error('Network response was not ok');
+          }
+    
+          const data = await res.json();
+          console.log('Response data:', data);
+    
+        } catch (error) {
+          console.error('Failed to submit form:', error);
+        }
+      };
+
+
+
+
+
+
     return (
         <>
             <Head>
@@ -134,135 +199,303 @@ const BandRegistration = ({ data }) => {
                                             Please fill in the form to register your band.
                                         </p>
                                     </div>
-                                    <form className="mt-6" action="#" method="POST">
+                                    <form className="mt-6" onSubmit={handleSubmit}>
                                         <div className="flex flex-wrap ">
                                             <div className="w-full my-2">
                                                 <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Band Name
+                                                    Creator ID
                                                 </label>
                                                 <div className="mt-1 rounded-md shadow-sm">
                                                     <input
-                                                        id="band_name"
+                                                        
                                                         type="text"
-                                                        required
+                                                        
                                                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Band Name"
+                                                        placeholder="Creator ID"
+                                                        name="creatorID"
+                                                        value={formData.creatorID}
+                                                        onChange={handleInputFieldChange}
+
                                                     />
                                                 </div>
                                             </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Name
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Name"
+                                                        name="name"
+                                                        value={formData.name}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+                                            
+<div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Logo URL
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Logo URL"
+                                                        name="logoUrl"
+                                                        value={formData.logoUrl}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Cover Picture URL
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Cover Picture URL"
+                                                        name="coverPictureUrl"
+                                                        value={formData.coverPictureUrl}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Location
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Location"
+                                                        name="location"
+                                                        value={formData.location}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Mail ID
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Mail ID"
+                                                        name="mailID"
+                                                        value={formData.mailID}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Primary Phone No.
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Primary Phone No."
+                                                        name="primaryPhoneNumber"
+                                                        value={formData.primaryPhoneNumber}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Secondary Phone No.
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Secondary Phone No."
+                                                        name="secondaryPhoneNumber"
+                                                        value={formData.secondaryPhoneNumber}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Instagram Link
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Instagram Link"
+                                                        name="instagramLink"
+                                                        value={formData.instagramLink}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    Facebook Link
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="Facebook Link"
+                                                        name="facebookLink"
+                                                        value={formData.facebookLink}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div className="w-full my-2">
+                                                <label className="block text-sm font-medium leading-5 text-gray-400">
+                                                    YouTube Link
+                                                </label>
+                                                <div className="mt-1 rounded-md shadow-sm">
+                                                    <input
+                                                        
+                                                        type="text"
+                                                        
+                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
+                                                        placeholder="YouTube Link"
+                                                        name="youtubeLink"
+                                                        value={formData.youtubeLink}
+                                                        onChange={handleInputFieldChange}
+
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
                                             <div className="w-full my-2">
                                                 <label className="block text-sm font-medium leading-5 text-gray-400">
                                                     Bio
                                                 </label>
                                                 <div className="mt-1 rounded-md shadow-sm">
                                                     <input
-                                                        id="band_name"
+                                                        
                                                         type="text"
-                                                        required
+                                                        
                                                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Band Name"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="w-full my-2">
-                                                <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Contact Number 1
-                                                </label>
-                                                <div className="mt-1 rounded-md shadow-sm">
-                                                    <input
-                                                        id="band_name"
-                                                        type="text"
-                                                        required
-                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Contact Number 1"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="w-full my-2">
-                                                <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Contact Number 2
-                                                </label>
-                                                <div className="mt-1 rounded-md shadow-sm">
-                                                    <input
-                                                        id="band_name"
-                                                        type="text"
-                                                        required
-                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Contact Number 2"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="w-full my-2">
-                                                <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Brand Email Id
-                                                </label>
-                                                <div className="mt-1 rounded-md shadow-sm">
-                                                    <input
-                                                        id="band_name"
-                                                        type="text"
-                                                        required
-                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Brand Email Id"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="w-full my-2">
-                                                <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Area Of Services
-                                                </label>
-                                                <div className="mt-1 rounded-md shadow-sm">
-                                                    <input
-                                                        id="band_name"
-                                                        type="text"
-                                                        required
-                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Area Of Services"
+                                                        placeholder="Bio"
+                                                        name="bio"
+                                                        value={formData.bio}
+                                                        onChange={handleInputFieldChange}
+
                                                     />
                                                 </div>
                                             </div>
 
+
+
+
                                             <div className="w-full my-2">
                                                 <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Highlighted Show 1
+                                                    Genre
                                                 </label>
                                                 <div className="mt-1 rounded-md shadow-sm">
                                                     <input
-                                                        id="band_name"
+                                                        
                                                         type="text"
-                                                        required
+                                                        
                                                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Highlighted Show 1"
+                                                        placeholder="Genre"
+                                                        name="genre"
+                                                        value={formData.genre}
+                                                        onChange={handleInputFieldChange}
+
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="w-full my-2">
-                                                <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Highlighted Show 2
-                                                </label>
-                                                <div className="mt-1 rounded-md shadow-sm">
-                                                    <input
-                                                        id="band_name"
-                                                        type="text"
-                                                        required
-                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Highlighted Show 2"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="w-full my-2">
-                                                <label className="block text-sm font-medium leading-5 text-gray-400">
-                                                    Video Links
-                                                </label>
-                                                <div className="mt-1 rounded-md shadow-sm">
-                                                    <input
-                                                        id="band_name"
-                                                        type="text"
-                                                        required
-                                                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm bg-gray-800 text-gray-200"
-                                                        placeholder="Video links"
-                                                    />
-                                                </div>
-                                            </div>
+
+                                            
+
+                                            
+                                           
 
                                         </div>
                                         <div className="flex flex-wrap justify-content-between">
@@ -318,7 +551,9 @@ const BandRegistration = ({ data }) => {
                                                 </ImgCrop>
                                             </div>
                                         </div>
-                                        <a type="primary" href="/band/bandMemberRegistraion">Next</a>
+
+                                        <button type='submit'>Submit</button>
+                                        {/* <a type="primary" href="/band/bandMemberRegistraion">Next</a> */}
                                     </form>
                                 </div>
                             </div>
